@@ -1,0 +1,14 @@
+[package]
+name = "rust-bitcoin-timing"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "my_benchmark"
+harness = false
+
+[dependencies]
+bitcoin = "0.31.0"
