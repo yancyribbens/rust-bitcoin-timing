@@ -1,28 +1,21 @@
 use bitcoin::Amount;
-use core::str::FromStr;
 
 #[inline]
-pub fn bitcoin_sum() -> Amount {
-	let mut start = Amount::ZERO;
-	let one = Amount::from_str("1 sat").unwrap();
-
+pub fn bitcoin_sum(mut accum: Amount, inc: Amount) -> Amount {
 	for _x in 1..100_000 {
-		start += one; 
+		accum += inc; 
 	}
 
-	start
+    accum
 }
 
 #[inline]
-pub fn primitive_sum() -> u64 {
-	let mut start:u64 = 0;
-
-	for _x in 1..100_000 {
-		start += 1; 
+pub fn primitive_sum(mut accum: u64, inc: u64) -> u64 {
+	for _x in 1..200_000 {
+		accum += inc; 
 	}
 
-	start
-}
+    accum}
 
 #[cfg(test)]
 mod tests {
